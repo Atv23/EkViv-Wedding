@@ -2,13 +2,14 @@ import "../styles/global.css";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { img } from "framer-motion/client";
 
 export const storyTimeline = {
   "2022": [
     { 
       text: "The First Hello", 
       date: "13 Aug",
-      img: "/story/2022-1.jpg",
+      img: "/story/img22.png",
       desc: "One message. Two strangers. And unknowingly, the beginning of everything that would follow."
     },
     { 
@@ -20,7 +21,7 @@ export const storyTimeline = {
     { 
       text: "Campus Nights",
       date: "Sep – Oct", 
-      img: "/story/2022-3.jpg",
+      img: "/story/img6.jpg",
       desc: "Late walks, quiet corners, inside jokes, little moments that quietly eased the weight of the day & wrapped them in comfort."
     },
     { 
@@ -32,24 +33,34 @@ export const storyTimeline = {
     { 
       text: "Agra Adventures",
       date: "Dec",
+      img: "/story/img13.jpg",
       desc: "A business trip sprinkled with laughter, stories, and the charm of historic streets."
     },
     { 
       text: "Ghat Evenings",
       date: "Dec – Jan",
+      img: "/story/img12.jpg",
       desc: "Long walks by the ghats, peaceful moments, and the feeling that this bond was becoming something more."
     }
   ],
 
   "2023": [
     { 
+      text: "First Valentine",
+      date: "14 Feb",
+      img: "/story/img20.jpg",
+      desc: "Roses, sweetness, and a day that felt like a soft movie montage."
+    },
+    { 
       text: "Delhi Diaries",
       date: "Mar",
+      img: "/story/img17.jpg",
       desc: "Delhi’s chaos, their calm - brought new memories, warm conversations, and a little more closeness."
     },
     { 
       text: "Her First Birthday With Him", 
       date: "9 Jun",
+      img: "/story/img11.jpg",
       desc: "Cake, surprises, and the first official celebration of ‘us’. He went extra. She loved it."
     },
     { 
@@ -67,11 +78,13 @@ export const storyTimeline = {
     { 
       text: "Manali–Sissu Escape",
       date: "25 Nov",
+      img: "/story/img9.jpg",
       desc: "Snowy peaks, freezing winds, warm hands. A trip to remember forever."
     },
     {
       text: "When They Drifted Apart",
       date: "Dec",
+      img: "/story/img18.png",
       desc: "A phase where they drifted apart for a while - fewer calls, fewer conversations, and a silence neither of them enjoyed."
     }
   ],
@@ -80,12 +93,14 @@ export const storyTimeline = {
     { 
       text: "The Realization Arc",
       date: "Jan – Mar",
+      img: "/story/img24.JPG",
       desc: "Distance does things... She missed him, and realized that maybe, just maybe, this was love."
     },
     { 
       text: "Patchup & The Yes",
       date: "15 Apr",
-      desc: "After storms came clarity - and this time, his proposal finally got its deserved ‘yes’."
+      img: "/story/img7.jpg",
+      desc: "After storms came clarity - and this time, his relationship proposal finally got its deserved ‘yes’."
     },
     { 
       text: "First Official Date",
@@ -96,40 +111,58 @@ export const storyTimeline = {
     { 
       text: "Goa Escape",
       date: "25 Aug",
+      img: "/story/img8.jpg",
       desc: "Beaches, sunsets, long talks - the perfect blend of peace, chaos, and their own lovable brand of madness"
+    },
+    {
+      text: "Night of a Thousand Diyas : Dev Deepavali",
+      date: "16 Nov",
+      img: "/story/img21.jpg",
+      desc: "Kashi lit in gold - the night felt divine, peaceful, and unforgettable."
     },
     { 
       text: "New Year, New Us",
       date: "31 Dec",
+      img: "/story/img10.jpg",
       desc: "Their very first New Year together - ending 2024 with love, beginning 2025 with dreams above."
     }
   ],
 
   "2025": [
     { 
-      text: "First Valentine",
-      date: "14 Feb",
-      desc: "Roses, sweetness, and a day that felt like a soft movie montage."
+      text: "Escape to Paradise: Kashmir",
+      date: "7 Feb",
+      img: "/story/img19.jpg",
+      desc: "Snow-kissed mountains, cozy moments, and memories wrapped in white - Kashmir became a chapter to cherish!"
     },
     { 
       text: "The Marriage Proposal",
       date: "15 Mar",
+      img: "/story/img14.jpg",
       desc: "His proposal - this time with certainty, planning, and a heart overflowing & she gave him the yes he’d been waiting for."
     },
     { 
       text: "Families Aligned",
       date: "Apr",
+      img: "/story/img23.png",
       desc: "Approval, blessings, and a whole lot of happy tears on both sides."
+    },
+    {
+      text: "The Cool Cousins Trip",
+      date: "5 May",
+      img: "/story/img22.jpg",
+      desc: "From shared jokes to scenic frames — a lively trip where he truly blended into her cousin circle."
     },
     { 
       text: "Families Met",
       date: "21 May",
+      img: "/story/img16.jpg",
       desc: "A warm gathering of both families filled with laughter, food, and the excitement of what’s coming."
     },
     { 
       text: "Roka Ceremony",
       date: "16 Jun",
-      img: "/story/2025-1.jpg",
+      img: "/story/img15.jpg",
       desc: "The first official step - traditions, rituals, and a love sealed with blessings."
     },
     { 

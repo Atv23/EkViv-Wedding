@@ -34,7 +34,7 @@ export default function Events() {
     {
       title: "Wedding Ceremony",
       date: "24 November 2025",
-      time: "6:00 PM",
+      time: "8:00 PM",
       desc:
         "A JOURNEY HAS BEGUN FOR TWO HEARTS TO BEAT AS ONE. THE JOURNEY OF TWO SOULS AND FAMILIES TO UNITE AS ONE.",
       tag: "Shaadi",
@@ -46,9 +46,15 @@ export default function Events() {
     <div className="page-bg">
       <Navbar />
 
-      <div className="events-container">
+      {/* HERO */}
+      <header className="events-hero">
         <h1 className="events-heading">Wedding Events</h1>
+        <p className="events-sub">
+            Come, be a part of each cherished moment - Your presence will make every event brighter.
+          </p>
+      </header>
 
+      <div className="events-container">
         <div className="events-grid">
           {events.map((e, i) => (
             <div key={i} className="event-card">

@@ -165,23 +165,31 @@ body {
 }
 
 .mobile-menu {
-  background: rgba(43, 7, 20, 0.95);
+  background: linear-gradient(
+    180deg,
+    rgba(171, 49, 94, 0.85) 0%,
+    rgba(139, 38, 75, 0.75) 35%,
+    rgba(100, 19, 48, 0.55) 65%,
+    rgba(54, 11, 27, 0.25) 85%,
+    rgba(54, 11, 27, 0) 100%
+  );
+  
   backdrop-filter: blur(6px);
 
   border-top: 1px solid rgba(255,215,0,0.25);
   border-bottom: 1px solid rgba(255,215,0,0.18);
 
-  padding: 18px 20px;
+  padding: 5px 20px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 2px;
 
   animation: dropDown 0.35s ease;
   z-index: 9999;
 }
 
 .mobile-menu a {
-  color: #FFD700;
+  color: #ffee8f;
   text-decoration: none;
   font-size: 18px;
   padding: 8px 4px;
@@ -209,8 +217,8 @@ body {
 /* HERO BACKGROUND */
 .hero-header {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+
+  overflow: visible;
 }
 
 .hero-bg {
@@ -245,6 +253,7 @@ body {
   justify-content: center;
   background: rgba(255, 215, 0, 0.10);
   box-shadow: 0 0 45px rgba(255, 215, 0, 0.4);
+  transition: 0.3s ease;
 }
 
 /* FIXED IMAGE STRETCH PROBLEM */
@@ -257,6 +266,21 @@ body {
   opacity: 0.75;
 }
 
+.glow-active {
+  animation: breathingGlow 3.5s ease-in-out infinite;
+  }
+
+@keyframes breathingGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 65px rgba(255, 215, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  }
+}
 
 /* TEXT */
 .hero-title {
@@ -329,6 +353,7 @@ body {
 .hashtags {
   margin-top: 25px;
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
 }
@@ -339,6 +364,16 @@ body {
   border-radius: 14px;
   font-size: 13px;
   font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .hashtags {
+    gap: 8px;
+  }
+  .hashtags span {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
 }
 
 /* BUTTONS */
@@ -370,10 +405,19 @@ body {
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   font-size: 13px;
   opacity: 0.7;
 }
+
+.made-by {
+  margin-top: -10px;
+  font-size: 12px;
+  opacity: 0.7;
+  color: rgba(255,255,255,0.65);
+  font-family: 'Cormorant Garamond', serif;
+}
+
 
 /* RESPONSIVE (mobile) */
 @media (max-width: 768px) {
@@ -391,6 +435,7 @@ body {
     width: 150px;
     height: 150px;
   }
+  
   .hero-title {
     font-size: 28px;
   }
@@ -419,8 +464,26 @@ body {
 /* ===========================
    EVENTS PAGE
 =========================== */
-.events-container {
+
+.events-hero {
+  align-items: center;
+  justify-content: center;
   padding: 20px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,215,0,0.02), rgba(0,0,0,0.06));
+  border-bottom: 1px solid rgba(255,215,0,0.04);
+  box-shadow: inset 0 -30px 60px rgba(0,0,0,0.25);
+}
+
+.events-sub{
+  font-family: "Playfair Display", serif;
+  color: rgba(255,215,0,0.8);
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.events-container {
+  padding: 40px 20px;
   max-width: 900px;
   margin: auto;
   text-align: center;
@@ -599,6 +662,8 @@ body {
 .venue-hero-content {
   position: absolute;
   bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   text-align: center;
   color: #FFD700;
@@ -637,6 +702,7 @@ body {
 
 .venue-sub {
   margin-top: 10px;
+  color: rgba(255,215,0,0.8);
   padding: 0 16px;
   word-wrap: break-word;
   text-align: center;
@@ -674,7 +740,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #FFD700;
+  background: linear-gradient(180deg, #FFD957, #F7C800);
   color: #2B0714;
   padding: 8px 14px;
   border-radius: 8px;
@@ -682,6 +748,7 @@ body {
   border: none;
   cursor: pointer;
   transition: 0.25s;
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.4);
 }
 
 .venue-btn:hover {
@@ -754,6 +821,7 @@ body {
 .venue-card-text {
   margin-top: 6px;
   opacity: 0.9;
+  color: rgba(255,215,0,0.8);;
 }
 
 
@@ -932,8 +1000,13 @@ body {
 
 /* Hero header */
 .gallery-hero {
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
   text-align: center;
-  padding: 60px 20px 30px;
+  background: linear-gradient(180deg, rgba(255,215,0,0.02), rgba(0,0,0,0.06));
+  border-bottom: 1px solid rgba(255,215,0,0.04);
+  box-shadow: inset 0 -30px 60px rgba(0,0,0,0.25);
 }
 
 .gallery-title {
@@ -944,10 +1017,10 @@ body {
 }
 
 .gallery-sub {
+  font-family: "Playfair Display", serif;
+  color: rgba(255,215,0,0.8);
   margin-top: 8px;
-  font-size: 1.2rem;
-  color: #ffde7a;
-  opacity: 0.9;
+  font-size: 16px;
 }
 
 /* Grid layout */
@@ -986,6 +1059,103 @@ body {
   transform: scale(1.12);
 }
 
+.gallery-sections {
+  margin-top: 20px;
+  padding: 10px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.gallery-section-btn {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  background: rgba(255,215,0,0.12);
+  border: 1px solid rgba(255,215,0,0.45);
+  padding: 12px 18px;
+  font-size: 20px;
+  font-family: "Cormorant Garamond", serif;
+  color: #FFD700;
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* The triangle */
+.gallery-section-icon {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #FFD700;       /* ▼ shape */
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+}
+
+/* Rotate when open */
+.gallery-section-btn.open .gallery-section-icon {
+  transform: rotate(180deg);           /* ▲ shape */
+}
+
+
+.gallery-scrollbox {
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 14px;
+  border-radius: 5px;
+
+  background: rgba(255, 217, 0, 0.034);
+  border: 1px solid rgba(255, 223, 44, 0.25);
+  box-shadow: inset 0 0 16px rgba(255, 215, 0, 0.12);
+}
+
+.gallery-empty {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  color: rgba(255, 215, 0, 0.85);
+  opacity: 0.9;
+}
+
+.video-thumb {
+  position: relative;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  color: rgba(255, 215, 0, 0.9);
+  text-shadow: 0 0 12px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+
+.lightbox-video {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  border: 3px solid #FFD700;
+  box-shadow: 0 0 30px rgba(255,215,0,0.6);
+}
+
+
+.gallery-scrollbox::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gallery-scrollbox::-webkit-scrollbar-thumb {
+  background: rgba(255,215,0,0.6);
+  border-radius: 6px;
+}
+
+
 /* Lightbox */
 .lightbox {
   position: fixed;
@@ -1001,13 +1171,42 @@ body {
 }
 
 .lightbox-img {
-  width: 90%;
-  max-width: 680px;
+  width: auto;
+  max-width: 90vw;
+  max-height: 90vh; 
+  height: auto;
+  object-fit: contain;
   border-radius: 15px;
   border: 3px solid #FFD700;
   box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
   animation: popIn 0.35s ease;
 }
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  color: #FFD700;
+  background: rgba(0,0,0,0.3);
+  border: 2px solid rgba(255,215,0,0.6);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100000;
+  backdrop-filter: blur(3px);
+  transition: 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0,0,0,0.45);
+  transform: scale(1.08);
+}
+
 
 /* Animations */
 @keyframes fadeIn {
@@ -1030,15 +1229,49 @@ body {
   }
 }
 
+.lightbox-left,
+.lightbox-right {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 42px;
+  color: #FFD700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.lightbox-left:hover,
+.lightbox-right:hover {
+  opacity: 1;
+}
+
+.lightbox-left {
+  left: 20px;
+}
+
+.lightbox-right {
+  right: 20px;
+}
+
+
 /* ======================
    RSVP HERO
 ====================== */
 
 .rsvp-hero {
   text-align: center;
-  padding: 50px 20px 20px;
-  background: linear-gradient(to bottom, #2B0714, #3c0a1c);
   color: #FFD700;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,215,0,0.02), rgba(0,0,0,0.06));
+  border-bottom: 1px solid rgba(255,215,0,0.04);
+  box-shadow: inset 0 -30px 60px rgba(0,0,0,0.25);
 }
 
 .rsvp-title {
@@ -1048,9 +1281,10 @@ body {
 }
 
 .rsvp-sub {
-  font-size: 1.2rem;
-  opacity: 0.85;
-  margin-top: 6px;
+  font-family: "Playfair Display", serif;
+  color: rgba(255,215,0,0.8);
+  margin-top: 8px;
+  font-size: 16px;
 }
 
 /* ======================
@@ -1076,7 +1310,7 @@ body {
 }
 
 .rsvp-label {
-  color: #FFD700;
+  color: #ffe99f;
   font-size: 1rem;
   margin-bottom: 4px;
   display: block;
@@ -1084,12 +1318,12 @@ body {
 }
 
 .rsvp-input {
-  width: 100%;
+  width: 95%;
   padding: 10px 12px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,215,0,0.35);
   border-radius: 8px;
-  color: #FFD700;
+  color: #ffeba9;
   margin-bottom: 18px;
   font-size: 1rem;
 }
@@ -1129,14 +1363,21 @@ body {
 .rsvp-submit {
   width: 100%;
   padding: 12px;
-  background: #FFD700;
+  background: linear-gradient(180deg, #FFD957, #F7C800);
   color: #2B0714;
+  box-shadow: 0 8px 28px rgba(255,200,40,0.12);
   font-weight: 700;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
   cursor: pointer;
   transition: 0.2s;
+}
+
+.rsvp-input:focus,
+.rsvp-textarea:focus {
+  box-shadow: 0 6px 30px rgba(255,215,0,0.06);
+  border-color: rgba(255,215,0,0.28);
 }
 
 .rsvp-submit:hover {
@@ -1148,19 +1389,16 @@ body {
 /* ======================
    Story Page
 ====================== */
-/* ---------------- Story page - polished gold-plate timeline ---------------- */
-
-/* ========== STORY PAGE (Royal Theme) ========== */
-
-.story-page {
-  max-width: 1200px;
-  margin: 32px auto 80px;
-  padding: 0 22px;
-}
 
 .story-hero {
-  text-align: center;
   margin-bottom: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,215,0,0.02), rgba(0,0,0,0.06));
+  border-bottom: 1px solid rgba(255,215,0,0.04);
+  box-shadow: inset 0 -30px 60px rgba(0,0,0,0.25);
 }
 
 .story-title {
@@ -1181,6 +1419,8 @@ body {
 .story-chapters {
   display: flex;
   flex-direction: column;
+  margin: 32px auto ;
+  padding: 0 22px;
   gap: 34px;
 }
 
@@ -1363,10 +1603,342 @@ body {
   overflow: hidden;
   border: 1px solid rgba(255,215,0,0.45);
   box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+  position: relative;
+  cursor: pointer;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: fill;
+  transition: transform 0.35s ease;
+}
+
+.card-image:hover img,
+.card-image:active img {
+  transform: scale(1.12); /* zoom-in */
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.55);
+}
+
+
+/* ======================
+   Wishes Page
+====================== */
+
+.wishes-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,215,0,0.02), rgba(0,0,0,0.06));
+  border-bottom: 1px solid rgba(255,215,0,0.04);
+  box-shadow: inset 0 -30px 60px rgba(0,0,0,0.25);
+}
+
+.wishes-hero-inner {
+  max-width: 1100px;
+}
+
+.wishes-title {
+  font-family: "Playfair Display", "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  margin: 0;
+  color: #FFD700;
+  letter-spacing: 0.6px;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.wishes-sub {
+  font-family: "Playfair Display", serif;
+  color: rgba(255,215,0,0.8);
+  margin-top: 18px;
+  font-size: 16px;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+.wishes-main {
+  max-width: 1200px;
+  margin: 8px auto 80px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* --- Form card (left) --- */
+.wishes-form-card {
+  background: rgba(255,215,0,0.05);
+  border: 1px solid rgba(255,215,0,0.08);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  color: #ffffff;
+}
+
+.wishes-form-card h2 {
+  margin: 0 0 30px 0;
+  font-family: "Cormorant Garamond", serif;
+  color: #ffdf75;
+  font-size: 1.45rem;
+}
+
+/* Form */
+.wishes-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wishes-label {
+  font-size: 0.9rem;
+  color: rgba(255,235,180,0.95);
+  margin-top: 6px;
+}
+
+.wishes-input,
+.wishes-textarea {
+  width: 95%;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,215,0,0.08);
+  color: #fdebb2;
+  padding: 10px 12px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: box-shadow 0.18s ease, transform 0.12s ease;
+  resize: vertical;
+  box-shadow: inset 0 -6px 12px rgba(0,0,0,0.35);
+}
+
+.wishes-input::placeholder,
+.wishes-textarea::placeholder {
+  color: rgba(255,215,0,0.4);
+}
+
+/* Focus */
+.wishes-input:focus,
+.wishes-textarea:focus {
+  box-shadow: 0 6px 30px rgba(255,215,0,0.06);
+  border-color: rgba(255,215,0,0.28);
+}
+
+/* Error */
+.wishes-error {
+  color: #ffb4a2;
+  background: rgba(255,0,0,0.04);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+/* Actions */
+.wishes-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+/* Buttons (primary / outline / ghost) */
+.btn-primary,
+.btn-outline,
+.btn-ghost {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* Primary gold */
+.btn-primary {
+  background: linear-gradient(180deg, #FFD957, #F7C800);
+  color: #2B0714;
+  box-shadow: 0 8px 28px rgba(255,200,40,0.12);
+}
+
+.btn-primary:active { transform: translateY(1px); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Outline */
+.btn-outline {
+  background: transparent;
+  color: #FFD957;
+  border: 1px solid rgba(255,215,0,0.14);
+}
+
+/* Ghost small */
+.btn-ghost {
+  background: transparent;
+  color: rgba(255,215,0,0.9);
+  padding: 8px 10px;
+}
+
+/* ---------- LIST / MESSAGES (right) ---------- */
+/* Make the entire message container fixed height & scrollable */
+.wishes-list {
+  background: rgba(255,215,0,0.05);
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255,215,0,0.06);
+  height: 420px;               /* FIXED HEIGHT  */
+  overflow-y: auto;            /* SCROLL WHEN NEEDED */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+}
+
+/* Grid stays inside a scroll container */
+.wishes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-right: 6px;          /* Prevents text touching scrollbar */
+}
+
+
+/* heading */
+.wishes-list h2 {
+  color: #ffdf75;
+  font-family: "Cormorant Garamond", serif;
+  margin: 0 0 12px 0;
+}
+
+/* Loading / empty */
+.wishes-loading,
+.wishes-empty {
+  color: rgba(255,235,200,0.85);
+  padding: 18px;
+  text-align: center;
+}
+
+
+/* single wish card */
+.wish-card {
+  background: linear-gradient(180deg, rgba(24, 6, 6, 0.01), rgba(255,255,255,0.00));
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255,215,0,0.07);
+  color: #fdf0c2;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  background: rgba(255, 210, 32, 0.042);
+  border: 1px solid rgba(255, 215, 0, 0.18);
+}
+
+/* hover lift */
+.wish-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+}
+
+/* meta row */
+.wish-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.wish-name {
+  color: rgba(255,215,0,0.4);
+  font-weight: 700;
+  font-size: 0.97rem;
+  font-family: "Playfair Display", serif;
+}
+
+.wish-time {
+  color: rgba(255,235,200,0.75);
+  font-size: 0.82rem;
+}
+
+/* message body */
+.wish-message {
+  color: rgba(255,235,180,0.95);
+  line-height: 1.5;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+/* refresh button container */
+.wishes-refresh {
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 960px) {
+  .wishes-main {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .wishes-form-card {
+    order: 1;
+  }
+
+  .wishes-list {
+    order: 2;
+  }
+
+  .wishes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- micro-polish / accessible focus ---------- */
+button:focus,
+.wishes-input:focus,
+.wishes-textarea:focus {
+  outline: 3px solid rgba(255,215,0,0.12);
+  outline-offset: 3px;
+}
+.wishes-input {
+  width: 95%;
+}
+/* reduce motion for prefers-reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .wish-card,
+  .btn-primary,
+  .btn-outline {
+    transition: none;
+  }
+}
+
+/* CUSTOM GOLD SCROLLBAR */
+.wishes-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.wishes-list::-webkit-scrollbar-track {
+  background: rgba(255, 215, 0, 0.05);
+  border-radius: 10px;
+}
+
+.wishes-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FFD700, #b88a00);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.wishes-list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffea75, #e0b400);
+}
+
+.wishes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.refresh-btn {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
 }

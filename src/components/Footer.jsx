@@ -7,6 +7,7 @@ export default function Footer() {
       <p className="footer-text">
         Made with 💛 for Dr Ekagrata & Dr Vivek
       </p>
+      <p className="made-by">Designed & built by ATV</p>
     </footer>
   );
 }

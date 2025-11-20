@@ -41,10 +41,10 @@ export default function Navbar() {
         {/* DESKTOP LINKS */}
         <div className="nav-links">
           <a href="/">Home</a>
-          <a href="/story">Story</a>
           <a href="/events">Events</a>
           <a href="/venue">Venue</a>
           <a href="/gallery">Gallery</a>
+          <a href="/story">Story</a>
           <a href="/rsvp">RSVP</a>
           <a href="/wishes">Wishes</a>
         </div>
@@ -59,10 +59,10 @@ export default function Navbar() {
       {menuOpen && (
         <div className="mobile-menu">
           <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="/story" onClick={() => setMenuOpen(false)}>Story</a>
           <a href="/events" onClick={() => setMenuOpen(false)}>Events</a>
           <a href="/venue" onClick={() => setMenuOpen(false)}>Venue</a>
           <a href="/gallery" onClick={() => setMenuOpen(false)}>Gallery</a>
+          <a href="/story" onClick={() => setMenuOpen(false)}>Story</a>
           <a href="/rsvp" onClick={() => setMenuOpen(false)}>RSVP</a>
           <a href="/wishes" onClick={() => setMenuOpen(false)}>Wishes</a>
         </div>
