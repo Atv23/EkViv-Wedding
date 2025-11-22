@@ -95,7 +95,9 @@ function isVideo(src) {
       "/gallery/bts/vdo9.mp4",
       "/gallery/bts/vdo10.mp4",
       "/gallery/bts/vdo11.mp4",
-      "/gallery/bts/vdo12.mp4"
+      "/gallery/bts/vdo12.mp4",
+      "/gallery/bts/vdo13.mp4",
+      "/gallery/bts/vdo14.mp4"
     ]
   };
 
